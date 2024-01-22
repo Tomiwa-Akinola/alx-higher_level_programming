@@ -1,6 +1,6 @@
 #!/usr/bin/pyhton3
 def list_division(my_list_1, my_list_2, list_length):
-    newList = []
+    newlist = []
     for i in range(0, list_length):
         try:
             div = my_list_1[i] / my_list_2[i]
@@ -14,5 +14,5 @@ def list_division(my_list_1, my_list_2, list_length):
             print("out of range")
             div = 0
         finally:
-            newList.append(div)
-    return (newList)
+            newlist.append(div)
+    return (newlist)
