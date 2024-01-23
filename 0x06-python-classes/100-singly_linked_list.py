@@ -1,4 +1,7 @@
 #!/usr/bin/python3
+:wq
+
+#!/usr/bin/python3
 
 """Defines a class Square."""
 
@@ -68,4 +71,4 @@ class Square:
             [print("#", end="") for k in range(0, self.__size)]
             if i != self.__size - 1:
                 print("")
-        return ("")
+        return (")
