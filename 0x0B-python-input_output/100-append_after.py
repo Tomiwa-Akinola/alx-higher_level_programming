@@ -1,14 +1,20 @@
 #!/usr/bin/python3
-"""Defines a class MyInt that inherits from int."""
+"""Defines a text file insertion function."""
 
 
-class MyInt(int):
-    """Invert int operators == and !=."""
+def append_after(filename="", search_string="", new_string=""):
+    """Inserts text after each line containing a given string in a file.
 
-    def __eq__(self, value):
-        """Override == opeartor with != behaviour."""
-        return self.real != value
-
-    def __ne__(self, value):
-        """Override != operator with == behaviour."""
-        return self.real == value
+    Args:
+        filename (str): The name of the file.
+        search_string (str): The string to search for within the file.
+        new_string (str): The string to insert.
+    """
+    text = ""
+    with open(filename) as r:
+        for line in r:
+            text += line
+            if search_string in line:
+                text += new_string
+    with open(filename, "w") as w:
+        w.write(text)
