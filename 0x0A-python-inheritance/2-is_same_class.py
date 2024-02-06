@@ -1,10 +1,17 @@
 #!/usr/bin/python3
-is_same_class = __import__('2-is_same_class').is_same_class
+"""Defines a class-checking function."""
 
-b = 1
-if is_same_class(b, int):
-    print("{} is an instance of the class {}".format(b, int.__name__))
-if is_same_class(b, float):
-    print("{} is an instance of the class {}".format(b, float.__name__))
-if is_same_class(b, object):
-    print("{} is an instance of the class {}".format(b, object.__name__))
+
+def is_same_class(obj, a_class):
+    """Check if an object is exactly an instance of a given class.
+
+    Args:
+        obj (any): The object to check.
+        a_class (type): The class to match the type of obj to.
+    Returns:
+        If obj is exactly an instance of a_class - True.
+        Otherwise, False.
+    """
+    if type(obj) == a_class:
+        return True
+    return False
