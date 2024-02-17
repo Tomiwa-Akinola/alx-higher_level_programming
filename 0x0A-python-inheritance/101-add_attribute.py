@@ -1,16 +1,17 @@
 #!/usr/bin/python3
-add_attribute = __import__('101-add_attribute').add_attribute
+"""Defines a function that adds attributes to objects."""
 
-class MyClass():
-    pass
 
-mc = MyClass()
-add_attribute(mc, "name", "John")
-print(mc.name)
+def add_attribute(obj, att, value):
+    """Add a new attribute to an object if possible.
 
-try:
-    a = "My String"
-    add_attribute(a, "name", "Bob")
-    print(a.name)
-except Exception as e:
-    print("[{}] {}".format(e.__class__.__name__, e))
+    Args:
+        obj (any): The object to add an attribute to.
+        att (str): The name of the attribute to add to obj.
+        value (any): The value of att.
+    Raises:
+        TypeError: If the attribute cannot be added.
+    """
+    if not hasattr(obj, "__dict__"):
+        raise TypeError("can't add new attribute")
+    setattr(obj, att, value)
